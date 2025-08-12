@@ -1,0 +1,45 @@
+<div class="container my-4">
+    <!-- Selector de País -->
+    <div class="mb-4">
+        <label for="paisSelect" class="form-label fw-bold">Seleccione un país:</label>
+        <select id="paisSelect" class="form-select shadow-sm" [(ngModel)]="selectedPais" (change)="onPaisChange()">
+            <option [ngValue]="null">-- Seleccionar --</option>
+            <option *ngFor="let pais of paises" [ngValue]="pais.id">
+                {{ pais.Nombre }}
+            </option>
+        </select>
+    </div>
+
+    <!-- Loader -->
+    <!-- <div class="text-center my-4" *ngIf="loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Cargando...</span>
+        </div>
+    </div> -->
+
+    <!-- Mensaje cuando no hay clubes -->
+    <!-- <div *ngIf="!loading && clubes.length === 0 && selectedPais" class="alert alert-warning">
+        No hay clubes registrados para este país.
+    </div> -->
+
+    <!-- Cards de Clubes -->
+    <div class="row g-4">
+        <div class="col-md-4 col-sm-6" *ngFor="let club of clubes">
+            <div class="card shadow-sm h-100 border-0">
+                <!-- <img *ngIf="club.logo_url" [src]="club.logo_url" class="card-img-top" alt="{{ club.Nombre }}"
+                    style="object-fit: contain; height: 150px; background-color: #f8f9fa;"> -->
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ club.Nombre }}</h5>
+                    <p class="card-text text-muted">
+                        ID País: {{ club.id_Pais }}
+                    </p>
+                </div>
+                <div class="card-footer bg-white border-0 text-end">
+                    <button class="btn btn-sm btn-outline-primary">
+                        Ver detalles
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { DeportesComponent } from './components/deportes/deportes.component';
 import { PaisesComponent } from './components/paises/paises.component';
 import { LigasComponent } from './components/ligas/ligas.component';
+import { ClubesComponent } from './components/clubes/clubes.component';
 
 // @Component({ template: '<p>Login Page</p>' }) class LoginComponent {}
 // @Component({ template: '<p>Dashboard Page</p>' }) class DashboardComponent {}
@@ -25,6 +26,7 @@ export const routes: Routes = [
   { path: 'deportes', component: DeportesComponent, canActivate: [authGuard] },
   { path: 'paises', component: PaisesComponent, canActivate: [authGuard] },
   { path: 'ligas', component: LigasComponent, canActivate: [authGuard] },
+  { path: 'clubes', component: ClubesComponent, canActivate: [authGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect to login by default
   { path: '**', redirectTo: '/login' } // Redirect to login for any other unknown routes
 ];

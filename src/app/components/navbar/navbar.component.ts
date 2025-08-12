@@ -32,6 +32,9 @@ import { AuthService } from '../../services/auth.service';
             <li class="nav-item">
               <a class="nav-link" routerLink="/paises" routerLinkActive="active">CONTACT <span class="nav-subtitle">OFFICE</span></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/clubes" routerLinkActive="active">CLUBS <span class="nav-subtitle">2022</span></a>
+            </li>
           </ul>
           <button class="btn btn-outline-light" (click)="logout()">Logout</button>
         </div>
